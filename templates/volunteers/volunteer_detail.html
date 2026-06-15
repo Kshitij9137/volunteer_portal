@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ volunteer.name }} — NayePankh{% endblock %}
+
+{% block content %}
+
+<div class="row justify-content-center mt-2">
+  <div class="col-md-6">
+    <div class="card border-0 shadow-sm">
+      <div class="card-body p-4">
+
+        <div class="d-flex align-items-center gap-3 mb-4">
+          <div class="rounded-circle bg-success d-flex align-items-center justify-content-center text-white fw-bold"
+               style="width:52px;height:52px;font-size:1.2rem;">
+            {{ volunteer.name|first|upper }}
+          </div>
+          <div>
+            <h5 class="fw-bold mb-0">{{ volunteer.name }}</h5>
+            <span class="badge bg-success">{{ volunteer.skill }}</span>
+            {% if not volunteer.is_active %}
+              <span class="badge bg-secondary ms-1">Inactive</span>
+            {% endif %}
+          </div>
+        </div>
+
+        <table class="table table-borderless mb-0">
+          <tr>
+            <td class="text-muted ps-0" style="width:35%;">
+              <i class="bi bi-envelope me-2"></i>Email
+            </td>
+            <td>{{ volunteer.email }}</td>
+          </tr>
+          <tr>
+            <td class="text-muted ps-0">
+              <i class="bi bi-telephone me-2"></i>Phone
+            </td>
+            <td>{{ volunteer.phone }}</td>
+          </tr>
+          <tr>
+            <td class="text-muted ps-0">
+              <i class="bi bi-geo-alt me-2"></i>City
+            </td>
+            <td>{{ volunteer.city }}</td>
+          </tr>
+          <tr>
+            <td class="text-muted ps-0">
+              <i class="bi bi-calendar me-2"></i>Joined
+            </td>
+            <td>{{ volunteer.joined_date }}</td>
+          </tr>
+        </table>
+
+        <div class="d-flex gap-2 mt-4">
+          <a href="{% url 'volunteer_edit' volunteer.pk %}" class="btn btn-success btn-sm">
+            <i class="bi bi-pencil me-1"></i> Edit
+          </a>
+          <a href="{% url 'volunteer_delete' volunteer.pk %}" class="btn btn-outline-danger btn-sm">
+            <i class="bi bi-trash me-1"></i> Delete
+          </a>
+          <a href="{% url 'volunteer_list' %}" class="btn btn-outline-secondary btn-sm ms-auto">
+            <i class="bi bi-arrow-left me-1"></i> Back
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

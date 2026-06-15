@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block title %}Sign Up — NayePankh{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center mt-5">
+  <div class="col-md-5">
+
+    <div class="card shadow-sm border-0">
+      <div class="card-body p-4">
+
+        <div class="text-center mb-4">
+          <i class="bi bi-person-plus-fill text-success" style="font-size: 2.5rem;"></i>
+          <h4 class="fw-bold mt-2">Create Account</h4>
+          <p class="text-muted small">Join NayePankh Volunteer Portal</p>
+        </div>
+
+        <form method="post">
+          {% csrf_token %}
+
+          {% for field in form %}
+            <div class="mb-3">
+              <label class="form-label fw-medium">{{ field.label }}</label>
+              <input
+                type="{{ field.field.widget.input_type }}"
+                name="{{ field.html_name }}"
+                class="form-control {% if field.errors %}is-invalid{% endif %}"
+                placeholder="{{ field.label }}"
+              />
+              {% for error in field.errors %}
+                <div class="invalid-feedback">{{ error }}</div>
+              {% endfor %}
+              {% if field.help_text %}
+                <div class="form-text text-muted small">{{ field.help_text }}</div>
+              {% endif %}
+            </div>
+          {% endfor %}
+
+          <button type="submit" class="btn btn-success w-100 mt-2">
+            <i class="bi bi-person-check-fill me-1"></i> Create Account
+          </button>
+        </form>
+
+        <hr class="my-3"/>
+        <p class="text-center small text-muted mb-0">
+          Already have an account?
+          <a href="/accounts/login/" class="text-success fw-medium">Login</a>
+        </p>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+{% endblock %}
