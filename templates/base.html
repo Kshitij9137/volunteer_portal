@@ -22,11 +22,7 @@
         {% if request.user.is_authenticated %}
         <div class="collapse navbar-collapse">
           <ul class="navbar-nav me-auto">
-            <li class="nav-item">
-              <a class="nav-link text-white" href="/">
-                <i class="bi bi-speedometer2 me-1"></i>Dashboard
-              </a>
-            </li>
+            
             <li class="nav-item">
               <a
                 class="nav-link text-white {% if request.resolver_match.url_name == 'dashboard' %}fw-bold border-bottom border-white{% endif %}"
