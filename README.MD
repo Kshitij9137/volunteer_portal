@@ -93,7 +93,6 @@ First request may take 30-60 seconds to wake up.
 
 ## Author
 
-Your Name
 GitHub: https://github.com/Kshitij9137
 
 ---
