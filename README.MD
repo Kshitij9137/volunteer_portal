@@ -84,7 +84,7 @@ volunteer_portal/
 ## Deployment
 
 Deployed on Render (free tier).
-Live URL: https://your-app-name.onrender.com
+Live URL: https://nayepankh-volunteer-portal-sygk.onrender.com/
 
 Note: Free tier spins down after 15 minutes of inactivity.
 First request may take 30-60 seconds to wake up.
