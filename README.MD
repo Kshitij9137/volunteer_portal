@@ -23,8 +23,7 @@ A Django web application built for NayePankh Foundation to manage and track volu
 - Python 3.10
 - Django 5.2
 - Bootstrap 5
-- SQLite (local) / PostgreSQL (production)
-- Deployed on Render
+- SQLite
 
 ---
 
