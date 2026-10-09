@@ -1,7 +1,5 @@
 from django.db import models
-
 class Volunteer(models.Model):
-
     SKILL_CHOICES = [
         ('Teaching', 'Teaching'),
         ('Medical', 'Medical'),
