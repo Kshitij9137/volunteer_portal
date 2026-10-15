@@ -82,7 +82,7 @@ volunteer_portal/
 
 ## Deployment
 
-Deployed on Render.
+Deployed on Render (Free).
 Live URL: https://nayepankh-volunteer-portal-sygk.onrender.com/
 
 
